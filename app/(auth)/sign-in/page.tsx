@@ -22,7 +22,7 @@ const SignIn = () => {
 
     const onSubmit = async (data: SignInFormData) => {
   try {
-    console.log("Login data:", data);
+    // TODO: Call authentication API
 
     toast.success("Signed in successfully");
 
@@ -47,7 +47,13 @@ const SignIn = () => {
                     placeholder="johndoe@gmail.com"
                     register={register}
                     error={errors.email}
-                    validation={{ required: 'Email is required', pattern: /^\w+@\w+\.\w+$/ }}
+                    validation={{
+                        required: 'Email is required',
+                        pattern: {
+                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                            message: 'Please enter a valid email address'
+                        }
+                    }}
                 />
 
                 <InputField

@@ -91,12 +91,11 @@ const SignUp = () => {
         />
 
         <SelectField
-            name="riskTolerence"
+            name="riskTolerance"
             label="Risk Tolerance"
             control={control}
             placeholder="Select your risk level"
             options={RISK_TOLERANCE_OPTIONS}
-            control={control}
             error={errors.riskTolerance}
             required
         />
@@ -107,7 +106,6 @@ const SignUp = () => {
             control={control}
             placeholder="Select your preferred industry"
             options={PREFERRED_INDUSTRIES}
-            control={control}
             error={errors.preferredIndustry}
             required
         />

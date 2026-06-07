@@ -19,7 +19,7 @@ const SelectField = ({name,label,placeholder,options,control,error, required = f
             name={name}
             control={control}
             rules={{
-                required: required ? 'Please select ${label.tolowerCase()}' : false,
+                required: required ? 'Please select ${label.toLowerCase()}' : false,
             }}
             render={({field})=>(
                 <Select value={field.value} onValueChange={field.onChange}>
