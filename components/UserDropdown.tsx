@@ -20,6 +20,10 @@ const UserDropdown = ({user}:{user:User}) => {
 
     const router = useRouter();
 
+    const handleWatchlist = () => {
+    router.push("/watchlist");
+}
+
     const handleSignOut = async () => {
         const result = await signOut();
         if (result?.success === false) {
@@ -62,9 +66,12 @@ const UserDropdown = ({user}:{user:User}) => {
             </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator className="bg-gray-600"/>
-            <DropdownMenuItem onClick={handleSignOut} className="text-gray-100 text-md font-medium focus:bg-transparent focus:text-yello-500 transition-colors cursor-pointer">
-                {/* <Logout04Icon className="h-4 w-4 mr-2 hidden sm:block"/>
-                Logout */}
+
+            <DropdownMenuItem onClick={handleWatchlist} className="text-gray-100 text-md font-medium cursor-pointer">
+  Watchlist
+</DropdownMenuItem>
+
+            <DropdownMenuItem onClick={handleSignOut} className="text-gray-100 text-md font-medium focus:bg-transparent focus:text-yellow-500 transition-colors cursor-pointer">
                 <LogOut className="h-4 w-4 mr-2 hidden sm:block"/>
                 Logout
             </DropdownMenuItem>
