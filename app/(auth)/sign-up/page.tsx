@@ -68,13 +68,19 @@ const SignUp = () => {
         />
 
         <InputField
-            name="email"
-            label="Email"
-            placeholder="johndoe@gmail.com"
-            register={register}
-            error={errors.email}
-            validation={{required:'Email is required', pattern: /^\w+@\w+\.\w+$/, message: 'Email address is required'}}
-        />
+    name="email"
+    label="Email"
+    placeholder="johndoe@gmail.com"
+    register={register}
+    error={errors.email}
+    validation={{
+        required: 'Email is required',
+        pattern: {
+            value: /^\w+@\w+\.\w+$/,
+            message: 'Please enter a valid email address',
+        },
+    }}
+/>
 
         <InputField
             name="password"
