@@ -128,7 +128,7 @@ export default function SearchCommand({renderAs = 'button', label = 'Add stock',
 >
                             <Link
   href={`/stocks/${stock.symbol}`}
-  onClick={() => handleSelectStock(stock.symbol)}
+  onClick={() => handleSelectStock()}
   className="
     flex
     items-center

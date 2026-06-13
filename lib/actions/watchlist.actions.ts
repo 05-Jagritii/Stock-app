@@ -35,7 +35,7 @@ export async function addToWatchlist(
   try {
     await connectToDatabase();
 
-    const session = await auth.api.getSession({
+    const session = await auth?.api?.getSession({
       headers: await headers(),
     });
 
@@ -76,7 +76,7 @@ export async function removeFromWatchlist(
   try {
     await connectToDatabase();
 
-    const session = await auth.api.getSession({
+    const session = await auth?.api?.getSession({
       headers: await headers(),
     });
 
@@ -104,7 +104,7 @@ export async function getUserWatchlist() {
   try {
     await connectToDatabase();
 
-    const session = await auth.api.getSession({
+    const session = await auth?.api?.getSession({
       headers: await headers(),
     });
 
@@ -125,7 +125,7 @@ export async function isStockInWatchlist(symbol: string) {
   try {
     await connectToDatabase();
 
-    const session = await auth.api.getSession({
+    const session = await auth?.api?.getSession({
       headers: await headers(),
     });
 

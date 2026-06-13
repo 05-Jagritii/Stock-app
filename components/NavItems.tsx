@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import SearchCommand from './SearchCommand'
 
-const NavItems = ({initialStocks}: {initialStock : StockWithWatchlistStatus} ) => {
+const NavItems = ({initialStocks}: {initialStocks : StockWithWatchlistStatus[]} ) => {
 
     const pathname = usePathname()
 
