@@ -16,13 +16,9 @@ import NavItems from "./NavItems"
 import { LogOut } from "lucide-react"
 import { signOut } from "@/lib/actions/auth.actions"
 
-const UserDropdown = ({user,initialStocks}:{user:User, initialStocks: StockWithWatchlistStatus}) => {
+const UserDropdown = ({user,initialStocks}:{user:User, initialStocks: StockWithWatchlistStatus[]}) => {
 
     const router = useRouter();
-
-    const handleWatchlist = () => {
-    router.push("/watchlist");
-}
 
     const handleSignOut = async () => {
         const result = await signOut();
@@ -50,26 +46,23 @@ const UserDropdown = ({user,initialStocks}:{user:User, initialStocks: StockWithW
                 </div>
             </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="text-gray-400">
+        <DropdownMenuContent align="end"
+  className="w-72 text-gray-400 bg-[#081633]">
             <DropdownMenuLabel>
             <div className="flex relative items-center gap-3 py-2">
                 <Avatar className="h-10 w-10">
                     <AvatarImage/>
                     <AvatarFallback className="bg-yellow-500 text-yellow-900 text-sm font-bold">{user.name[0]}</AvatarFallback>
                 </Avatar>
-                <div className="flex flex-col">
+                <div className="flex flex-col min-w-0">
                     <span className="text-base font-medium text-gray-400">
                         {user.name}
                     </span>
-                    <span className="text-sm text-gray-500">{user.email}</span>
+                    <span className="text-sm text-gray-500 truncate max-w-50">{user.email}</span>
                 </div>
             </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator className="bg-gray-600"/>
-
-            <DropdownMenuItem onClick={handleWatchlist} className="text-gray-100 text-md font-medium cursor-pointer">
-  Watchlist
-</DropdownMenuItem>
 
             <DropdownMenuItem onClick={handleSignOut} className="text-gray-100 text-md font-medium focus:bg-transparent focus:text-yellow-500 transition-colors cursor-pointer">
                 <LogOut className="h-4 w-4 mr-2 hidden sm:block"/>
@@ -77,7 +70,7 @@ const UserDropdown = ({user,initialStocks}:{user:User, initialStocks: StockWithW
             </DropdownMenuItem>
             <DropdownMenuSeparator className="hidden sm:block bg-gray-600"/>
             <nav className="sm:hidden">
-                <NavItems initialStock={initialStocks}/>
+                <NavItems initialStocks={initialStocks}/>
             </nav>
         </DropdownMenuContent>
     </DropdownMenu>
