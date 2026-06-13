@@ -224,7 +224,7 @@ EMAIL_PASSWORD=
 Clone repository:
 
 ```bash
-git clone https://github.com/05-Jagritii/stock-app.git
+git clone https://github.com/05-Jagritii/Stock-app.git
 ```
 
 Install dependencies:
