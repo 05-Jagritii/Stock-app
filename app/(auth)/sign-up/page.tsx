@@ -95,7 +95,7 @@ const SignUp = () => {
         <CountrySelectField
             name="country"
             label="Country"
-            control={control}
+            control={control as any}
             error={errors.country}
             required
         />
@@ -103,7 +103,7 @@ const SignUp = () => {
         <SelectField
             name="investmentGoals"
             label="Investment Goals"
-            control={control}
+            control={control as any}
             placeholder="Select your investment goal"
             options={INVESTMENT_GOALS}
             error={errors.investmentGoals}
@@ -113,7 +113,7 @@ const SignUp = () => {
         <SelectField
             name="riskTolerance"
             label="Risk Tolerance"
-            control={control}
+            control={control as any}
             placeholder="Select your risk level"
             options={RISK_TOLERANCE_OPTIONS}
             error={errors.riskTolerance}
@@ -123,7 +123,7 @@ const SignUp = () => {
         <SelectField
             name="preferredIndustry"
             label="Preferred Industry"
-            control={control}
+            control={control as any}
             placeholder="Select your preferred industry"
             options={PREFERRED_INDUSTRIES}
             error={errors.preferredIndustry}
